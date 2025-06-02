@@ -15,6 +15,12 @@ const routes = [
     meta: { title: '登录', noAuth: true }
   },
   {
+    path: '/forgot-password',
+    name: 'ForgotPassword',
+    component: () => import('../views/ForgotPassword.vue'), // 修正路径
+    meta: { title: '找回密码', noAuth: true }
+  },
+  {
     path: '/dashboard',
     name: 'Dashboard',
     component: () => import('../views/dashboard/Dashboard.vue'),
@@ -147,4 +153,4 @@ router.beforeEach((to, from, next) => {
   next()
 })
 
-export default router 
+export default router

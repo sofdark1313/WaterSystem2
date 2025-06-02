@@ -185,6 +185,11 @@ const checkRememberLogin = () => {
 onMounted(() => {
   checkRememberLogin()
 })
+
+// 新增: goToForgotPassword 方法来处理跳转逻辑
+const goToForgotPassword = () => {
+  router.push('/forgot-password')
+}
 </script>
 
 <template>
@@ -232,7 +237,7 @@ onMounted(() => {
           <div class="remember-row">
             <el-checkbox v-model="loginForm.remember">记住我</el-checkbox>
             <div>
-              <a href="#" class="forget-password">忘记密码?</a>
+              <a href="#" class="forget-password" @click.prevent="goToForgotPassword">忘记密码?</a>
               <el-switch
                 v-model="useLocalMode"
                 class="local-mode-switch"
@@ -424,5 +429,10 @@ onMounted(() => {
   .login-title {
     font-size: 20px;
   }
+}
+
+.forgot-password-link {
+  margin-top: 10px;
+  text-align: center;
 }
 </style>

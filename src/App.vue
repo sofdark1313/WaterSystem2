@@ -11,9 +11,9 @@ const activeMenu = ref(route.path)
 const isCollapse = ref(false)
 const notificationCount = ref(5)
 
-// 判断当前是否为登录页面
+// 判断当前是否为登录页面或找回密码页面
 const isLoginPage = computed(() => {
-  return route.path === '/login'
+  return route.path === '/login' || route.path === '/forgot-password'
 })
 
 // 判断用户角色
