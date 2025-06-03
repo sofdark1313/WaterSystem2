@@ -262,6 +262,11 @@ const goToForgotPassword = () => {
         </el-form-item>
       </el-form>
       
+      <div class="text-center mt-4">
+        <span class="text-gray-500">没有账号？</span>
+        <el-link type="primary" @click="router.push('/register')">立即注册</el-link>
+      </div>
+      
       <div class="login-tips" v-if="isDev">
         <p>默认账号: admin / 密码: admin123</p>
         <p>测试账号: 2320 / 密码: water2320</p>

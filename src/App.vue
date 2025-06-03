@@ -13,7 +13,7 @@ const notificationCount = ref(5)
 
 // 判断当前是否为登录页面或找回密码页面
 const isLoginPage = computed(() => {
-  return route.path === '/login' || route.path === '/forgot-password'
+  return route.path === '/login' || route.path === '/forgot-password' || route.path === '/register'
 })
 
 // 判断用户角色

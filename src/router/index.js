@@ -15,6 +15,12 @@ const routes = [
     meta: { title: '登录', noAuth: true }
   },
   {
+    path: '/register',
+    name: 'Register',
+    component: () => import('../views/auth/Register.vue'),
+    meta: { title: '注册', noAuth: true }
+  },
+  {
     path: '/forgot-password',
     name: 'ForgotPassword',
     component: () => import('../views/ForgotPassword.vue'), // 修正路径
@@ -138,7 +144,7 @@ router.beforeEach((to, from, next) => {
 
     // 普通用户访问需要管理员权限的页面，重定向到用户首页
     if (to.meta.requiredRole === UserRoles.ADMIN && userRole === UserRoles.USER) {
-      ElMessage.warning('权限不足，无法访问该页面')
+      
       next('/user-dashboard')
       return
     }
